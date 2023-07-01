@@ -19,8 +19,7 @@ Here are the cases that are used in this coding style:
 
 ### 📐 Formatting
 ---
-I normally lean towards not using an auto formatter as it requires quite some effort to setup and is often not flexible enough.
-
+- #### Auto Formatter - Normally no as it requires quite some effort to setup and is often not flexible enough.
 - #### Indentations - 4 spaces and indent for every section/block if possible
     - Allow differentiating __blocks/sections of code easily__
     - Spaces allow __easier manual formatting__
