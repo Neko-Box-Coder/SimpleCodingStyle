@@ -2,6 +2,11 @@
 ---
 My own personal simple Coding convention for all languages. C++ for demo purposes.
 
+This is intended for 
+
+
+### Class, namespace, enum names
+---
 
 
 
