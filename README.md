@@ -1,2 +1,7 @@
-# SimpleNamingConvention
-My own personal simple naming convention for all languages
+## NekoBoxCoder Simple Coding Convention
+---
+My own personal simple Coding convention for all languages. C++ for demo purposes.
+
+
+
+
