@@ -1,4 +1,4 @@
-## 🖌️ NekoBoxCoder Simple Coding Style
+## 🖌️ Simple Coding Style
 ---
 My own personal simple coding style for all languages. C++ for demo purposes.
 
@@ -24,10 +24,10 @@ Identifiers or names should require minimum context to understand their purpose 
 Try to be __simple and explicit__ (and sometimes long) rather than cryptic and short. 
 
 - #### Anything (enum value, variables, etc...) constant or macro - MACRO_CASE
-    - **Explaination:** Macro case is used in many places that denote __constants__ and __macros__ due to historic reasons. This can easily tell that something is __CONSTANT__ and __you can't change it__.
+    - **Explanation:** Macro case is used in many places that denote __constants__ and __macros__ due to historic reasons. This can easily tell that something is __CONSTANT__ and __you can't change it__.
     - Example: `static const int NUM_OF_LEGS_FOR_HUMANOID = 2;`
 - #### Anything lives inside a function - camelCase
-    - **Explaination:** This can easily differentiate a __local variable__ in a function against class or global variables and is especially helpful in a relatively long function.
+    - **Explanation:** This can easily differentiate a __local variable__ in a function against class or global variables and is especially helpful in a relatively long function.
         ```c++
             //Example
             float NormalizedSum(int* vec, size_t count, int min, int max)
@@ -41,7 +41,7 @@ Try to be __simple and explicit__ (and sometimes long) rather than cryptic and s
             }    
         ```
 - #### Anything that can be accessed outside a function - PascalCase
-    - **Explaination:** Clean, easy to read without any cryptic underscores or prefixes/suffixes, and can clearly indicate it can be used/accessed by other functions.
+    - **Explanation:** Clean, easy to read without any cryptic underscores or prefixes/suffixes, and can clearly indicate it can be used/accessed by other functions.
     - __Types Names or Class/Namespace Identifier - Explicit Noun__
         - Example: `class ModulesManager`
     - __Class/Global variables names - Explicit Noun Or State__
@@ -82,9 +82,9 @@ Try to be __simple and explicit__ (and sometimes long) rather than cryptic and s
 ### 📐 Formatting
 ---
 - #### Auto Formatter - No
-    - **Explaination:** This is because it requires quite some effort to setup and is often not flexible enough.
+    - **Explanation:** This is because it requires quite some effort to setup and is often not flexible enough.
 - #### Indentations - 4 spaces and indent for every section/block if possible
-    - **Explaination:**
+    - **Explanation:**
         - Allow differentiating __blocks/sections of code easily__
         - Spaces allow __easier manual formatting__
         - looks more or less __uniform across devices__.
@@ -115,7 +115,7 @@ Try to be __simple and explicit__ (and sometimes long) rather than cryptic and s
         ```
     - The first one looks perfectly spaced and logical, while the second one looks quite clustered
 - #### Nested Functions such as Lambda - Treat as new block
-    - **Explaination:** Nested functions are **functions** and should be treated and formatted like so to be **consistent**.
+    - **Explanation:** Nested functions are **functions** and should be treated and formatted like so to be **consistent**.
     -   Example: 
         ```c++
             void SomeFunction()
@@ -140,12 +140,12 @@ Try to be __simple and explicit__ (and sometimes long) rather than cryptic and s
     
         ```
 - #### Width Limit - Soft limit of around 60% of monitor width
-    - **Explaination:**
+    - **Explanation:**
         - Width limit is __quite situational__
         - Allows __side by side__ header and source files
         - When it is not too long, I will normally leave it on the same line. Otherwise, I would __spread it across multiple lines by parameters.__
 - #### Multilines - Align with tabs with variables and blocks
-    - **Explaination:** while formatting each line with space looks nicer, aligning with tabs makes manual formatting a lot quicker, It's a good compromise.
+    - **Explanation:** while formatting each line with space looks nicer, aligning with tabs makes manual formatting a lot quicker, It's a good compromise.
     
     - Example:
         ```c++
