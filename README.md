@@ -102,7 +102,7 @@ Try to be __simple and explicit__ (and sometimes long) rather than cryptic and s
         - You can configure on most of the modern IDE or text editor to align and output 4 
         spaces quite easily.
 - #### Bracket style - Newline and same indentation
-    - **Explanation:** Easier to read by providing spacing against the block content. Expecially
+    - **Explanation:** Easier to read by providing spacing against the block content. Especially
     when dealing multi-line if statement where the bracket in newline helps differentiate the if
     statement lines and the actual content lines.
     - Example:
@@ -269,6 +269,40 @@ Try to be __simple and explicit__ (and sometimes long) rather than cryptic and s
         ```
     - Constructor
         ```c++
+            //Normal case
+                                                        //Align to nearest tab width
+            runcpp2::NodeRequirement::NodeRequirement(  const std::string& name, 
+                                                        ryml::NodeType nodeType, 
+                                                        bool required,
+                                                        bool nullable) :    Name(name), 
+                                                                            NodeType(nodeType), 
+                                                                            Required(required), 
+                                                                            Nullable(nullable)
+            {
+                ...
+            }
+            
+            //Extreme case
+                                            //Align to nearest tab width
+            HumanoidEnemy::HumanoidEnemy(   int myParam1, 
+                                            const std::unordered_map<std::string, int>& myParam2, 
+                                            std::unordered_map< std::string, 
+                                                                std::vector<MyObject>>& myParam3,
+                                            const std::unordered_map
+                                            <
+                                                std::string, 
+                                                std::vector<const MyObject&>
+                                            >& myParam4,
+                                            std::vector<std::pair<int, bool>> myParam5) :
+                //Move to indented newline since there is no space after :
+                MyMember1(myParam1),
+                MyMember2(myParam2),
+                MyMember3(myParam3),
+                MyMember4(myParam4),
+                MyMember5(myParam5)
+            {
+                ...
+            }
         ```
     - Function Call With Many/Long Arguments
         ```c++
