@@ -1,6 +1,6 @@
 ## 🖌️ Simple Coding Style
 ---
-My own personal simple coding style for all languages. C++ for demo purposes.
+My own personal simple coding style for C++, but most of them can be apply to many languages.
 
 This is the style I used for all my personal repositories. And also for other people to reference 
 if needed.
@@ -18,6 +18,84 @@ Here are the cases that are used in this coding style:
 - PascalCase: `ThisIsAnExampleOfPascalCase`
 - camelCase: `thisIsAnExampleOfCamelCase`
 - MACRO_CASE: `THIS_IS_AN_EXAMPLE_OF_MACRO_CASE`
+
+### 🗿 Architecture and Philosophy
+---
+
+This section applies to most languages, not just c++
+
+#### Keep it simple, stupid
+Things are always changing, new deadlines, new features, new requirements.
+
+Instead of spending time over-engineering and designing something that you don't know how it will 
+work out (and you never will, unless you can predict the future), get it working first. After that
+you can do whatever you want, refactor it, clean it, etc.
+
+Nothing is future proof and don't waste your time trying to pretend you will design something 
+future proof. Something "good enough" is often the right balance between how much time is spent on
+designing the architecture and implementation to allow changes if needed.
+
+#### Priority readability and iterability over pre-mature optimization
+This of course is different per context/scenarios, but generally languages are fast enough under 
+most use-cases, and performance often only matters under certain part of a program (i.e. a hot loop).
+
+Sacrificing readability and iterability (i.e. using an array/struct for better CPU caching over 
+(linked) list strurcture that reads better) on non performance critical part isn't worth it.
+
+That is not to say you should make it inefficient, small habits like adding `const` and using 
+reference is generally good to do and doesn't hurt readability.
+
+A good rule of thumb is "Make it easy to read first, then make it run faster"
+
+#### No Inheritance, No OOP, No Interface, No "Clean Code", No "SOLID"
+The mainstream really endorse OOP. Schools, corporates, books are all praising it because it is 
+"Battle Tested" and is the industry de facto, not knowing how painfully confusing to navigate 
+and difficult to add features to these codebase. Not to mention it is slower as well, see 
+["Clean" Code, Horrible Performance](https://www.youtube.com/watch?v=tD5NrevFtbU) by Casey Muratori.
+
+Here by OOP I mean **object inheritance and interfaces**, not functions that are binded to 
+a data structure, not RAII.
+
+OOP sounds great on paper, you re-use things with hierarchical design, isolation of concerns and 
+allow easy testing. But in practice it often falls short in terms of readability and iterability.
+
+Trying to follow through a flow on what a function does? Too bad you will have to go to 20 
+different files to understand which concrete functions **can** be called, not to mention there
+can be **more than 1** concrete functions can be called if it is a multi-layer inheritance. 
+
+Using interfaces to make it easier for testing? Good luck diving through many layers and wrappers 
+when you are trying to debug or read the code, only to find out the logic is a dynamic 
+delegate/function object that is spawned and configured somewhere else and you now have to find 
+where that is. Also good luck adding new features since the moment you change the interface, 
+you are forced to update 20 other classes (and tests) that are dependent on that interface.
+
+Of course "Clean Code" and "SOLID" says none of these are an issue if you follow their rules.
+This will be true if we live in a perfect world where there are no deadlines, no change of 
+requirements, no unique new features, no special use cases from the customer, etc. 
+
+But we don't live in a perfect world, this is just a lie so that people can sell books and host 
+talks and the only people can do this are big corporations which can afford to this and the rest
+of us are wasting time trying to perfect something that is always imperfect. 
+
+I have been to [this](https://github.com/Neko-Box-Coder/ssGUI) 
+[path](https://github.com/Neko-Box-Coder/CppOverride) (Using OOP) and **DEEPLY** regretted it. 
+
+Just implement the damn thing. 
+
+#### Composition, If and Switch Statements
+
+Instead of OOP and all those shit, just use composition, good ol' if statements and switch 
+statements when you need to generalize something. Not only it is easier to read since now each 
+function in the generalization shows **EXACTLY** what concrete functions it will call, it is easier
+to debug as well since you can can access all the concrete data just by poking into the member 
+data structure.
+
+#### Explicit abstractions over implicit abstractions, no need to hide implementations
+
+TODO...
+
+#### Simple, explicit code leads to readability
+
 
 ### ✏️ Identifiers / Names
 ---
